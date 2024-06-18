@@ -2,15 +2,17 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english,german]{babel}
+\usepackage[english, german]{babel}
 \usepackage{fancyhdr} %Kopf und Fußzeile
 \usepackage{graphicx}
+
 \usepackage{amsmath}
-\usepackage[style=authoryear]{biblatex} % BibLaTeX-Paket
-\addbibresource{literatur.bib} % Pfad zur Bibliografiedatei
+\usepackage[backend=biber, style=apa]{biblatex} % BibLaTeX-Paket
+\addbibresource{expose.bib} % Pfad zur Bibliografiedatei
 \graphicspath{{./bilder/}{./}}
 
 % use last
+\usepackage{xurl} % URL-Zeilenumbruch
 \usepackage[colorlinks=true,allcolors=black]{hyperref}
 
 
