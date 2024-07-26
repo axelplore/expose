@@ -6,9 +6,11 @@
 \usepackage{fancyhdr} %Kopf und Fußzeile
 \usepackage{geometry}
 \usepackage{longtable}
+\usepackage{array}
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{calc} 
+\usepackage{float}
 \usepackage{caption}
 
 \usepackage{amsmath}
@@ -32,6 +34,9 @@
 \rhead{\thepage}
 \lfoot{2023-09-19}
 \cfoot{}
+
+% Define a new column type
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 
 \begin{document}
 
