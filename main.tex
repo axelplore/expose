@@ -15,6 +15,7 @@
 \usepackage{pgfgantt} % Für Gantt-Diagramm
 \usepackage{lmodern} % Schriftart
 \usepackage{xcolor} % Farben
+\usepackage{datetime} % Datum
 
 \usepackage{amsmath}
 \usepackage[backend=biber, style=apa]{biblatex} % BibLaTeX-Paket
@@ -35,7 +36,7 @@
 \pagestyle{fancy}
 \lhead{\includegraphics[height=3ex]{FomLogo}}
 \rhead{\thepage}
-\lfoot{2023-09-19}
+\rfoot{\today}
 \cfoot{}
 
 % Define a new column type
@@ -45,22 +46,26 @@
 
 \input{titel}
 \pagenumbering{Roman}
+\setcounter{page}{2}
 
 \newpage
 \tableofcontents
 
 \newpage
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures %Abbildungsverzeichnis
 
 \newpage
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
 \listoftables
 
 \newpage
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
 \input{formelvz}
 
 \newpage
 \pagenumbering{arabic}
-\thispagestyle{empty} %keine Kopf und Fußzeile oder {plain}
+%\thispagestyle{empty} %keine Kopf und Fußzeile oder {plain}
 \input{einleitung}
 \input{arbeitstitel}
 \input{ziel}
@@ -69,7 +74,9 @@
 \input{zeitplan}
 
 
-
+\pagenumbering{Roman}
+\setcounter{page}{14}
+\addcontentsline{toc}{section}{Literatur}
 \printbibliography 
 
 \end{document}
