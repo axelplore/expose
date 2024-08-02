@@ -4,7 +4,18 @@
 \usepackage[T1]{fontenc}
 \usepackage[english, german]{babel}
 \usepackage{fancyhdr} %Kopf und Fußzeile
+\usepackage{geometry} %Seitenränder
+\usepackage{longtable}
+\usepackage{array}
 \usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{calc} 
+\usepackage{float}
+\usepackage{caption}
+\usepackage{pgfgantt} % Für Gantt-Diagramm
+\usepackage{lmodern} % Schriftart
+\usepackage{xcolor} % Farben
+\usepackage{datetime} % Datum
 
 \usepackage{amsmath}
 \usepackage[backend=biber, style=apa]{biblatex} % BibLaTeX-Paket
@@ -15,6 +26,8 @@
 \usepackage{xurl} % URL-Zeilenumbruch
 \usepackage[colorlinks=true,allcolors=black]{hyperref}
 
+\usepackage{float} %Bilder an bestimmter Stelle platzieren
+
 
 \setlength{\parindent}{0pt} % cm, mm, in
 \setlength{\parskip}{0.6ex plus 0.3ex minus 0.2ex} %elastisches Maß, um unschöne Seitenumbrüche zu vermeiden
@@ -23,38 +36,47 @@
 \pagestyle{fancy}
 \lhead{\includegraphics[height=3ex]{FomLogo}}
 \rhead{\thepage}
-\lfoot{2023-09-19}
+\rfoot{\today}
 \cfoot{}
+
+% Define a new column type
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 
 \begin{document}
 
 \input{titel}
 \pagenumbering{Roman}
+\setcounter{page}{2}
 
 \newpage
 \tableofcontents
 
 \newpage
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures %Abbildungsverzeichnis
 
 \newpage
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
 \listoftables
 
 \newpage
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
 \input{formelvz}
 
 \newpage
 \pagenumbering{arabic}
-\thispagestyle{empty} %keine Kopf und Fußzeile oder {plain}
+%\thispagestyle{empty} %keine Kopf und Fußzeile oder {plain}
 \input{einleitung}
 \input{arbeitstitel}
 \input{ziel}
 \input{methodik}
 \input{gliederung}
-\input{literaturrecherche}
 \input{zeitplan}
 
 
-
+\pagenumbering{Roman}
+\setcounter{page}{14}
+\addcontentsline{toc}{section}{Literatur}
 \printbibliography 
+
 \end{document}

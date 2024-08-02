@@ -10,3 +10,6 @@
 *.pdf
 *.run.xml
 *.bcf
+main.synctex(busy)
+main.synctex.gz
+main.synctex.gz(busy)
