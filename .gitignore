@@ -11,4 +11,5 @@
 *.run.xml
 *.bcf
 main.synctex(busy)
-main.synctex
+main.synctex.gz
+main.synctex.gz(busy)
