@@ -10,3 +10,5 @@
 *.pdf
 *.run.xml
 *.bcf
+main.synctex(busy)
+main.synctex
