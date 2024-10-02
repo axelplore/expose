@@ -23,37 +23,22 @@ subsections = [
 ]
 
 # Change to the parent directory
-parent_dir = 'C:\Users\asa06\Documents\Bachelor'
-os.chdir(parent_dir)
-
-print(f"Changed to directory: {os.getcwd()}")
+# os.chdir('..')
 
 for number, name in subsections:
-    # Create the filename based on the existing pattern
+    # Create a valid filename
     filename = f"{number}_{name.replace(' ', '_')}.tex"
     
-    # Check if the file exists
-    if os.path.exists(filename):
-        # Create the content to be written
-        content = f"""% !TeX root=main.tex
+    # Create the file content
+    content = f"""% !TeX root=main.tex
 \\subsection{{{name}}}
 \\label{{subsec:{number}}}
-
 """
-        
-        # Read the existing content
-        with open(filename, 'r', encoding='utf-8') as f:
-            existing_content = f.read()
-        
-        # Combine new content with existing content
-        full_content = content + existing_content
-        
-        # Write the combined content back to the file
-        with open(filename, 'w', encoding='utf-8') as f:
-            f.write(full_content)
-        
-        print(f"Updated file: {filename}")
-    else:
-        print(f"Warning: File not found: {filename}")
+    
+    # Create the file and write the content
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(content)
+    
+    print(f"Created file: {filename}")
 
-print("All existing subsection files have been updated successfully.")
+print("All subsection files have been created successfully.")
